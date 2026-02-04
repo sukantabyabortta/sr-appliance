@@ -483,6 +483,10 @@
     body {
         padding-top: 68px;
     }
+    .floatIcon:after,
+    .floatIcon:before {
+        display: none;
+    }
 }
 
 @media only screen and (max-width:767px) {

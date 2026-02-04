@@ -2094,7 +2094,8 @@ textarea {
     background: linear-gradient(135deg, #216797, #277fb9);
 }
 
-.floatIcon {
+
+/* .floatIcon {
     position: fixed;
     right: 30px;
     bottom: 30px;
@@ -2102,6 +2103,52 @@ textarea {
     flex-direction: column;
     gap: 15px;
     z-index: 999;
+} */
+
+.floatIcon {
+    background: rgb(255 255 255 / 100%);
+    position: fixed;
+    right: 0;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    z-index: 999;
+    padding: 10px 5px;
+    border: 1px solid #f1f1f1;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.floatIcon:after,
+.floatIcon:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.floatIcon:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #fff;
+    border-width: 10px;
+    margin-top: -10px;
+}
+
+.floatIcon:before {
+    border-color: rgba(231, 76, 60, 0);
+    border-right-color: #f1f1f1;
+    border-width: 10px;
+    margin-top: -10px;
 }
 
 .floatIcon a {

@@ -267,4 +267,31 @@ $(document).ready(function() {
                 alert('Failed to send message.');
             });
     });
+
+    // Mobile show hide social icon
+    $(function() {
+
+        let lastScroll = 0;
+        const $bar = $('.floatIcon, .header');
+
+        $(window).on('scroll', function() {
+
+            if ($(window).width() > 690) return; // mobile only
+
+            let currentScroll = $(this).scrollTop();
+
+            // Scroll DOWN → hide
+            if (currentScroll > lastScroll + 10) {
+                $bar.addClass('hideBar');
+            }
+
+            // Scroll UP → show
+            else if (currentScroll < lastScroll) {
+                $bar.removeClass('hideBar');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+    });
 });
